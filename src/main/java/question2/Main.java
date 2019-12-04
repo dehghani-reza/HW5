@@ -1,6 +1,7 @@
 package question2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -20,7 +21,13 @@ public class Main {
                 )
         );
         System.out.println(persons);
-
-
-    }
+        System.out.println("*********************************************************");
+        Collections.sort(persons);
+        System.out.println(persons);
+        System.out.println("*********************************************************");
+        Person.CompareByLastName compareByLastName = new Person.CompareByLastName();
+        Collections.sort(persons,compareByLastName);
+        System.out.println(persons);
+        System.out.println("*********************************************************");
+    }// end of method main
 }
