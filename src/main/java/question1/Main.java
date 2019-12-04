@@ -12,6 +12,7 @@ public class Main {
         arrayList.add(4);//3
         arrayList.add(5);//4
         arrayList.add(4);//5
+        arrayList.add(25);
 
         System.out.println(ordering(arrayList));
 
