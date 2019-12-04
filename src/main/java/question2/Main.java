@@ -3,6 +3,7 @@ package question2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Main {
@@ -13,11 +14,11 @@ public class Main {
                 )
         );
         persons.add(new Person(20, "ali", "mahmodi",
-                        new Address("rezvani", "samangan", 8, "tehran", 187475566)
+                        new Address("rezvani", "samangan", 8, "mashhad", 187475566)
                 )
         );
         persons.add(new Person(24, "bagher", "abrishamkar",
-                        new Address("azimzadegan", "fadaeian", 12, "tehran", 17524669)
+                        new Address("azimzadegan", "fadaeian", 4, "tehran", 17524669)
                 )
         );
         System.out.println(persons);
@@ -26,8 +27,10 @@ public class Main {
         System.out.println(persons);
         System.out.println("*********************************************************");
         Person.CompareByLastName compareByLastName = new Person.CompareByLastName();
-        Collections.sort(persons,compareByLastName);
+        Collections.sort(persons, compareByLastName);
         System.out.println(persons);
         System.out.println("*********************************************************");
+        List<Person> tehranZone = persons.stream().filter(p -> p.address.city != "tehtan").filter(p -> p.address.zone < 5).collect(Collectors.toList());
+        System.out.println(tehranZone);
     }// end of method main
 }
